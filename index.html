@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto ENSUP - UEFA Champions League</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Proyecto ENSUP</h1>
+    <p class="subtitle">Análisis Estadístico y Simulador de la UEFA Champions League 2026/27</p>
+    <p class="info-tag">Página web creada por estudiantes y publicada en Vercel</p>
+  </header>
+
+  <main>
+    <!-- SECCIÓN 1: PREMIOS INDIVIDUALES -->
+    <h2 class="section-title">Pronóstico de Premios Individuales</h2>
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-icon">⚽</div>
+        <div class="award-title">Máximo Goleador</div>
+        <div class="award-player">Kylian Mbappé</div>
+        <div class="award-team">Real Madrid</div>
+        <div class="award-stat">12 Goles Proyectados</div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🎯</div>
+        <div class="award-title">Máximo Asistidor</div>
+        <div class="award-player">Lamine Yamal</div>
+        <div class="award-team">FC Barcelona</div>
+        <div class="award-stat">9 Asistencias Proyectadas</div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🏆</div>
+        <div class="award-title">MVP del Torneo</div>
+        <div class="award-player">Vinícius Júnior</div>
+        <div class="award-team">Real Madrid</div>
+        <div class="award-stat">Rating Promedio: 9.4</div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 2: TABLA DE EQUIPOS -->
+    <h2 class="section-title">Clubes Oficiales de la Fase de Liga</h2>
+    <div class="controls">
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar equipo o país..." onkeyup="filterTable()">
+    </div>
+
+    <div class="table-container">
+      <table id="teamsTable">
+        <thead>
+          <tr>
+            <th>Equipo</th>
+            <th>País</th>
+            <th>Rendimiento Plantilla</th>
+            <th>Prob. Ganar Título</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Se cargan dinámicamente mediante script.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECCIÓN 3: BRACKET COMPLETO -->
+    <h2 class="section-title">Fase de Eliminatorias Proyectada</h2>
+    <div class="bracket-container">
+      
+      <!-- Play-offs -->
+      <div class="round">
+        <div class="round-title">Play-offs (1/16)</div>
+        <div class="match-card">
+          <div class="team-row winner">Juventus <span>4</span></div>
+          <div class="team-row">Sporting CP <span>2</span></div>
+        </div>
+        <div class="match-card">
+          <div class="team-row winner">Inter de Milán <span>3</span></div>
+          <div class="team-row">VfB Stuttgart <span>1</span></div>
+        </div>
+        <div class="match-card">
+          <div class="team-row winner">Atlético de Madrid <span>2</span></div>
+          <div class="team-row">Aston Villa <span>1</span></div>
+        </div>
+        <div class="match-card">
+          <div class="team-row winner">Borussia Dortmund <span>3</span></div>
+          <div class="team-row">Bayer Leverkusen <span>2</span></div>
+        </div>
+      </div>
+
+      <!-- Octavos de Final -->
+      <div class="round">
+        <div class="round-title">Octavos de Final</div>
+        <div class="match-card">
+          <div class="team-row winner">Real Madrid <span>3</span></div>
+          <div class="team-row">Juventus <span>2</span></div>
+        </div>
+        <div class="match-card">
+          <div class="team-row winner">Manchester City <span>4</span></div>
+          <div class="team-row">Inter de Milán <span>2</span></div>
+        </div>
+        <div class="match-card">
+          <div class="team-row winner">FC Barcelona <span>3</span></div>
+          <div class="team-row">Atlético de Madrid <span>1</span></div>
+        </div>
+        <div class="match-card">
+          <div class="team-row winner">Bayern Múnich <span>3</span></div>
+          <div class="team-row">Borussia Dortmund <span>1</span></div>
+        </div>
+      </div>
+
+      <!-- Cuartos de Final -->
+      <div class="round">
+        <div class="round-title">Cuartos de Final</div>
+        <div class="match-card">
+          <div class="team-row winner">Real Madrid <span>3</span></div>
+          <div class="team-row">Manchester City <span>2</span></div>
+        </div>
+        <div class="match-card">
+          <div class="team-row winner">FC Barcelona <span>2</span></div>
+          <div class="team-row">Bayern Múnich <span>1</span></div>
+        </div>
+      </div>
+
+      <!-- Semifinales -->
+      <div class="round">
+        <div class="round-title">Semifinales</div>
+        <div class="match-card">
+          <div class="team-row winner">Real Madrid <span>4</span></div>
+          <div class="team-row">FC Barcelona <span>3</span></div>
+        </div>
+      </div>
+
+      <!-- Gran Final -->
+      <div class="round">
+        <div class="round-title">Gran Final</div>
+        <div class="match-card">
+          <div class="team-row winner">Real Madrid <span>2</span></div>
+          <div class="team-row">FC Barcelona <span>1</span></div>
+        </div>
+        <div class="match-card" style="border: 2px solid var(--accent-gold); text-align: center;">
+          <div style="color: var(--accent-gold); font-weight: bold; font-size: 1.1rem; padding: 5px 0;">
+            🏆 CAMPEÓN: Real Madrid
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 - Proyecto de Análisis Deportivo Escolar - Estudiantes ENSUP</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
